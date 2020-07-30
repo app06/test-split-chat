@@ -43,10 +43,12 @@ export default {
   data: () => ({
     message: ''
   }),
+  mounted() {
+    this.scrollMessages();
+  },
   watch: {
     selectedUserId(newVal, oldVal) {
       if (newVal !== oldVal) {
-        this.scrollMessages();
         this.message = '';
       }
     },
